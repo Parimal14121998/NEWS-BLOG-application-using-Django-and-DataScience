@@ -1,0 +1,19 @@
+{%  extends "base.html" %}
+
+{% block content  %}
+<h1> Newsletter </h1>
+<form method ="POST">
+
+{% csrf_token %}
+
+<input type ="email" placeholder = "enter email" name ="em" required />
+<p style="color:red;font-size:10px;">{Hint : Genuine registerd email to get notifications}</p>
+
+</br></br>
+
+<input type ="submit" value="unsubscribe" name="b2"/>
+</form>
+
+{{msg}}
+
+{% endblock %}

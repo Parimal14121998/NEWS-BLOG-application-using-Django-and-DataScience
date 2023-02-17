@@ -1,0 +1,26 @@
+{%  extends "base.html" %}
+
+{% block content  %}
+<h1> BLOGS & Newsletter  </h1>
+<form method ="POST">
+
+{% csrf_token %}
+<br/></br>
+NAME : <input type = "text" name="na" placeholder="enter ur name" required />
+<br/></br>
+EMAIL : <input type ="email" placeholder = "enter email" name ="em" required />
+<p style="color:red;font-size:10px;">{Hint : Genuine registerd email to get notifications}</p>
+
+GENRE : <input type="checkbox" name="g1" value="Technology"> Technology</input>
+<input type="checkbox" name="g2" value="Science" />Science </input>
+<input type="checkbox" name="g3" value="Travel" />Travel</input>
+<input type="checkbox" name="g4" value="Stocks" />Stocks</input>
+<p style="color:red;font-size:10px;">{Hint : Each genre cost 50rs {*For testing purpose*}}</p>
+
+</br></br>
+<input type ="submit" value="subscribe" name="b1"/>
+</form>
+
+{{msg}}
+
+{% endblock %}

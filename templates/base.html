@@ -1,0 +1,34 @@
+<html>
+<head>
+
+<title>NewsBlog APP </title>
+
+<style>
+*{font-size:20px;}
+.nav{background-color:coral;}
+.nav a {color:white;text-decoration:none;margin:50px;}
+</style>
+
+</head>
+
+<body>
+<center>
+<div class ="nav">
+{%  if not user.is_authenticated  %}
+<a href="{% url   'usignup' %}">SIGNUP</a>
+<a href="{% url 'ulogin'    %}">LOGIN</a>
+
+{%   else  %}
+<a href="{%   url 'ulogout'  %}">LOGOUT</a>
+<a href="{%   url 'usubscribe'  %}">SUBCRIBE BLOGS</a>
+<a href="{%   url 'uunsubscribe'  %}">UNSUBCRIBE</a>
+
+{%   endif %}
+</div>
+
+{%  block content  %}
+{% endblock %}
+
+</center>
+</body>
+</html>

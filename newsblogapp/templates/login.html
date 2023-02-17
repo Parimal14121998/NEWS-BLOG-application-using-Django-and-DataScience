@@ -1,0 +1,18 @@
+{%  extends "base.html" %}
+{% block content  %}
+
+<h1> Login page </h1>
+<form method ="POST">
+{% csrf_token %}
+<p style="color:red;font-size:10px;">{Hint : If you are first time user please signup else login with username used during signup}</p>
+
+<input type ="text" placeholder = "enter username" name ="un" required />
+</br></br>
+<input type ="password" placeholder = "enter password" name ="pw"  required />
+</br></br>
+<input type ="submit" value="login"/>
+</br></br>
+</form>
+
+{{msg}}
+{% endblock %}

@@ -1,0 +1,30 @@
+{%  extends "base.html" %}
+{% block content  %}
+
+<h1 style="color:gold;font-size:30px;"> Daily News & Blogs </h1>
+
+<form>
+<input type ="submit" value ="TODAY'S NEWS" name="btn" />
+</br></br>
+<input type ="submit" value ="Clear Screen" name="close" />
+</br></br>
+{% for j in info %}
+<h1>{{ j.title }}</h1>
+<a href = {{ j.url }}> Read more</a>
+</br>
+{% if j.urlToImage %}
+<img src ={{ j.urlToImage }} style="width:100px;height:auto;"></img>
+{% endif %}
+<hr/>
+{% endfor %}
+
+<input type ="submit" value ="Get Gold & Silver Price" name="btngs" />
+</br></br>
+
+
+<input type ="submit" value ="Get Crypto Price" name="btncr" />
+</br></br>
+{{ gs }}
+{{ cr|linebreaks }}
+
+{% endblock %}
